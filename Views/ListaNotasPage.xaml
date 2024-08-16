@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen3.Views"
+             x:Class="Examen3.Views.ListaNotasPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Lista de Notas" FontSize="24" HorizontalOptions="Center"/>
+            <ListView x:Name="notasListView"
+                      ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView>
+                                <SwipeView.Content>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                       
+                                        <Image Source="{Binding PhotoSource}"
+                                               WidthRequest="60"
+                                               HeightRequest="60"
+                                               Aspect="AspectFill"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Start" />
+
+                              
+                                        <Label Text="{Binding Descripcion}"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="StartAndExpand"
+                                               Margin="10,0,0,0"/>
+                                    </StackLayout>
+                                </SwipeView.Content>
+
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Actualizar" BackgroundColor="Blue" Invoked="OnActualizarClicked"/>
+                                        <SwipeItem Text="Eliminar" BackgroundColor="Red" Invoked="OnEliminarClicked"/>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

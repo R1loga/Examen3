@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examen3"
+             x:Class="Examen3.ActualizarNotaPage">
+
+    <StackLayout Padding="10">
+        <Label Text="Actualizar Nota" FontSize="24" HorizontalOptions="Center"/>
+
+        <Label Text="Descripción:"/>
+        <Editor x:Name="DescripcionEditor" HeightRequest="100"/>
+
+        <Label Text="Fecha:"/>
+        <DatePicker x:Name="FechaPicker"/>
+
+  
+        <Image x:Name="PhotoImage" HeightRequest="200"/>
+   
+        
+        <Button Text="Actualizar Nota" Clicked="OnUpdateNotaClicked"/>
+    </StackLayout>
+</ContentPage>
